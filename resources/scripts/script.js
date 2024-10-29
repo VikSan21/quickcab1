@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
     let currentIndex = 0;
 
+    // Preload images
+    images.forEach((img) => {
+        const image = new Image();
+        image.src = img;
+    });
+
     function changeBackground() {
         currentIndex = (currentIndex + 1) % images.length; // Cycle through images
         homeSection.style.backgroundImage = `url(${images[currentIndex]})`;
